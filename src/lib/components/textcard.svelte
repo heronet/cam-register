@@ -8,7 +8,7 @@
 	export let desc: string;
 </script>
 
-<Card.Root class="border-transparent bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950  ">
+<Card.Root class="rounded-lg  bg-white/10 p-4 shadow-lg backdrop-blur-lg ">
 	<Card.Header>
 		<Card.Title class="text-base text-primary-foreground"
 			>{title} <span class="text-red-600">{required ? '*' : ''}</span></Card.Title
