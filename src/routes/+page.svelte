@@ -99,10 +99,5 @@
 				{disabled}>{isLoading ? 'Please wait...' : 'Submit'}</Button
 			>
 		</div>
-		<Button
-			onclick={addPermission}
-			class="mb-4 w-full border bg-gradient-to-r from-purple-800 via-indigo-600 to-blue-800  disabled:opacity-100"
-			>{isLoading ? 'Please wait...' : 'Create'}</Button
-		>
 	</div>
 </div>
