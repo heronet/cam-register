@@ -8,16 +8,14 @@
 	export let desc: string;
 </script>
 
-<Card.Root
-	class="border-transparent bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950 text-primary-foreground "
->
+<Card.Root class="border-transparent bg-gradient-to-r from-blue-950 via-blue-800 to-blue-950  ">
 	<Card.Header>
-		<Card.Title class="text-base"
+		<Card.Title class="text-base text-primary-foreground"
 			>{title} <span class="text-red-600">{required ? '*' : ''}</span></Card.Title
 		>
 		<Card.Description class="text-primary-foreground">{desc}</Card.Description>
 	</Card.Header>
 	<Card.Content>
-		<Input bind:value={text} placeholder={title} required />
+		<Input class="" bind:value={text} placeholder={title} required />
 	</Card.Content>
 </Card.Root>
