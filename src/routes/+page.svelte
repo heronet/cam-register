@@ -55,6 +55,21 @@
 				isLoading = false;
 			});
 	}
+	function addPermission() {
+		fetch('/api/add-permission', {
+			method: 'POST',
+			body: JSON.stringify({ email: '', spreadsheetId: sheetId })
+		})
+			.then((res) => res.json())
+			.then((res) => {
+				// goto('/success');
+				console.log(res);
+			})
+			.catch((e) => console.log(e))
+			.finally(() => {
+				isLoading = false;
+			});
+	}
 </script>
 
 <div class="relative flex h-dvh w-full p-4">
@@ -84,10 +99,10 @@
 				{disabled}>{isLoading ? 'Please wait...' : 'Submit'}</Button
 			>
 		</div>
-		<!-- <Button
-			on:click={createForm}
+		<Button
+			onclick={addPermission}
 			class="mb-4 w-full border bg-gradient-to-r from-purple-800 via-indigo-600 to-blue-800  disabled:opacity-100"
 			>{isLoading ? 'Please wait...' : 'Create'}</Button
-		> -->
+		>
 	</div>
 </div>
