@@ -42,7 +42,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	const { spreadsheetId, entry }: { entry: Entry; spreadsheetId: string } = await request.json();
 
 	const headerRange = 'Sheet1!A1:E1';
-	const headerValues = [['Full Name', 'Email', 'Phone', 'LinkedIn', 'Interest']];
+	const headerValues = [['Full Name', 'Email', 'Phone', 'Department', 'Registration']];
 
 	const headerResource = {
 		values: headerValues
@@ -60,7 +60,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		// Define the range for the data rows
 		const range = 'Sheet1!A2'; // Adjust the range as needed
 
-		const values = [[entry.name, entry.email, entry.phone]];
+		const values = [[entry.name, entry.email, entry.phone, entry.department, entry.registration]];
 
 		const resource = {
 			values

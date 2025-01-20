@@ -15,7 +15,7 @@
 	let department: string;
 	let registration: string;
 
-	$: disabled = isLoading || !name || !phone || !email || !agreed;
+	$: disabled = isLoading || !name || !phone || !email || !department || !registration || !agreed;
 
 	function addEntry() {
 		if (disabled) return;
@@ -24,7 +24,9 @@
 		const data: Entry = {
 			name: name || 'None',
 			email: email || 'None',
-			phone: phone || 'None'
+			phone: phone || 'None',
+			department: department || 'None',
+			registration: registration || 'None'
 		};
 
 		fetch('/api/add', {
@@ -79,18 +81,17 @@
 		<Textcard bind:text={email} title={'Email'} desc="Enter your Email" required={true} />
 		<Textcard bind:text={phone} title={'Phone'} desc="Enter your Mobile number" required={true} />
 		<Textcard
-			bind:text={registration}
-			title={'Registration'}
-			desc="Enter your Registration number"
-			required={true}
-		/>
-		<Textcard
 			bind:text={department}
 			title={'Department'}
 			desc="Enter your Department"
 			required={true}
 		/>
-
+		<Textcard
+			bind:text={registration}
+			title={'Registration'}
+			desc="Enter your Registration number"
+			required={true}
+		/>
 		<Checkboxcard bind:checked={agreed} />
 		<div>
 			<Button
